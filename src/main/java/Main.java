@@ -4,7 +4,7 @@ import java.util.stream.Collectors;
 
 public class Main {
     public static void main(String[] args) {
-        String string = "a y z b c e";
+        String string = "a y z b c e z";
 
         System.out.println(getSortList(string, convert()));
 
@@ -15,7 +15,7 @@ public class Main {
     }
 
     private static List<String> getSortList(String string, Function<String, String[]> function) {
-        return Arrays.stream(function.apply(string)).sorted().collect(Collectors.toList());
+        return Arrays.stream(function.apply(string)).distinct().sorted().collect(Collectors.toList());
     }
 
 }
